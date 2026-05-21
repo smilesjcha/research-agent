@@ -78,6 +78,15 @@ target/
 # Jupyter Notebook
 .ipynb_checkpoints
 
+# Research harness local files
+references/pdfs/**/*.pdf
+references/processed/*
+references/exports/*
+references/bibtex/*
+!references/processed/.gitkeep
+!references/exports/.gitkeep
+!references/bibtex/.gitkeep
+
 # IPython
 profile_default/
 ipython_config.py

@@ -1,0 +1,8 @@
+TOPIC_KO=교육공학에서 AI 기반 형성적 피드백이 자기조절학습에 미치는 영향
+RESEARCH_QUESTION=How does AI-supported formative feedback influence self-regulated learning in educational technology environments?
+QUERY=AI feedback self-regulated learning educational technology
+KEYWORDS=educational technology; artificial intelligence in education; AI feedback; formative feedback; self-regulated learning; learning analytics
+FROM_YEAR=2020
+TO_YEAR=2026
+SEARCH_FIELD=title_and_abstract
+LANGUAGE=en
