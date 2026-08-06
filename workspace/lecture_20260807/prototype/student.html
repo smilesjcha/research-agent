@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="온라인 학습자의 계획·실행·도움 요청·회고를 돕는 교육용 MVP" />
+    <title>이번 주 학습 길잡이 · 교육용 MVP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="student.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="student.html" aria-label="학습 길잡이 첫 화면">
+        <span class="brand-mark">길</span>
+        <span><strong>이번 주 학습 길잡이</strong><small>계획 · 실행 · 도움 요청 · 회고</small></span>
+      </a>
+      <nav aria-label="서비스 이동">
+        <a href="index.html">연구자용 시안</a>
+        <span>교육용 MVP</span>
+      </nav>
+    </header>
+
+    <main>
+      <section class="intro">
+        <div>
+          <p class="eyebrow">STUDENT SUPPORT MVP · SAMPLE DATA</p>
+          <h1>이번 주에 할 일을<br /><em>한 걸음씩</em> 정리해요.</h1>
+          <p class="lead">정답을 대신 고르거나 학생을 평가하지 않습니다. 다음 행동을 작게 보여주고, 막힐 때 담당자에게 도움을 요청하는 연습용 화면입니다.</p>
+        </div>
+        <div class="safety-note">
+          <span>현재 작동 방식</span>
+          <strong>규칙 기반 로컬 데모</strong>
+          <p>실제 학생 정보와 외부 AI를 연결하지 않았습니다.</p>
+        </div>
+      </section>
+
+      <section class="progress-panel" aria-label="이번 주 진행 현황">
+        <div class="progress-copy">
+          <span>이번 주 진행</span>
+          <strong id="progressText">1 / 3 완료</strong>
+        </div>
+        <div class="progress-track" aria-hidden="true"><i id="progressBar"></i></div>
+        <p id="progressMessage">좋은 시작이에요. 오늘은 20분짜리 활동 하나만 끝내도 충분합니다.</p>
+      </section>
+
+      <section class="dashboard">
+        <article class="panel goal-panel">
+          <div class="panel-head">
+            <span>01</span>
+            <div><small>이번 주 목표</small><h2>내가 정한 한 가지</h2></div>
+          </div>
+          <fieldset class="goal-options">
+            <legend>이번 주에 가장 중요하게 생각하는 목표를 골라주세요.</legend>
+            <label><input type="radio" name="goal" value="과학 활동 2개 마치기" checked /><span><b>과학 활동 2개 마치기</b><small>짧게 나누어 진행</small></span></label>
+            <label><input type="radio" name="goal" value="모르는 내용 질문하기" /><span><b>모르는 내용 질문하기</b><small>도움 요청 연습</small></span></label>
+            <label><input type="radio" name="goal" value="학습 시간을 스스로 정하기" /><span><b>학습 시간을 스스로 정하기</b><small>나에게 맞는 리듬 찾기</small></span></label>
+          </fieldset>
+        </article>
+
+        <article class="panel task-panel">
+          <div class="panel-head">
+            <span>02</span>
+            <div><small>오늘 할 일</small><h2>작은 단위로 나눈 활동</h2></div>
+          </div>
+          <div class="tasks" id="taskList">
+            <button class="task complete" type="button" data-minutes="15" aria-pressed="true">
+              <i aria-hidden="true">✓</i><span><b>지난 학습 3줄 복습</b><small>15분 · 완료</small></span>
+            </button>
+            <button class="task" type="button" data-minutes="20" aria-pressed="false">
+              <i aria-hidden="true"></i><span><b>물질의 상태 변화 영상</b><small>20분 · 아직 시작 전</small></span>
+            </button>
+            <button class="task" type="button" data-minutes="10" aria-pressed="false">
+              <i aria-hidden="true"></i><span><b>확인 문제 3개</b><small>10분 · 아직 시작 전</small></span>
+            </button>
+          </div>
+          <button class="quiet" id="shortPlan" type="button">오늘 시간이 10분뿐이라면</button>
+        </article>
+
+        <article class="panel next-panel">
+          <div class="panel-head">
+            <span>03</span>
+            <div><small>다음 한 걸음</small><h2>지금 할 수 있는 행동</h2></div>
+          </div>
+          <div class="next-action" id="nextAction">
+            <span>추천</span>
+            <strong>20분 영상에서 첫 5분만 보기</strong>
+            <p>완벽히 끝내기보다 시작 지점을 만드는 것이 목표입니다.</p>
+          </div>
+          <div class="confidence">
+            <p>이 활동을 시작할 자신감은 어느 정도인가요?</p>
+            <div role="group" aria-label="시작 자신감">
+              <button type="button" data-confidence="low">낮아요</button>
+              <button class="active" type="button" data-confidence="mid">보통</button>
+              <button type="button" data-confidence="high">높아요</button>
+            </div>
+          </div>
+          <button class="primary" id="easyExplain" type="button">더 쉽게 설명 보기</button>
+        </article>
+      </section>
+
+      <section class="support-grid">
+        <article class="support-card human">
+          <div>
+            <span>막히면 혼자 버티지 않기</span>
+            <h2>담당자에게 도움 요청</h2>
+            <p>질문할 내용을 고르면 담당자에게 전달할 짧은 문장을 만듭니다. 자동 상담이나 진단은 하지 않습니다.</p>
+          </div>
+          <button id="helpButton" type="button">도움 요청하기</button>
+        </article>
+        <article class="support-card reflection">
+          <div>
+            <span>이번 주 회고</span>
+            <h2>작게 남기는 학습 기록</h2>
+            <p>잘된 점이나 다음 주에 바꾸고 싶은 점을 한 문장으로 적어보세요.</p>
+          </div>
+          <div class="reflection-input">
+            <input id="reflectionInput" maxlength="100" placeholder="예: 짧게 나누니 시작하기 쉬웠어요." />
+            <button id="saveReflection" type="button">기록</button>
+          </div>
+          <p class="saved" id="savedReflection" aria-live="polite"></p>
+        </article>
+      </section>
+
+      <section class="guardrail" aria-label="서비스 비범위">
+        <strong>이 MVP가 하지 않는 일</strong>
+        <span>자동 채점·등급화 없음</span>
+        <span>위험 학생 낙인 없음</span>
+        <span>건강·상담 진단 없음</span>
+        <span>사람 승인 없는 조치 없음</span>
+      </section>
+    </main>
+
+    <dialog id="helpDialog">
+      <form method="dialog">
+        <button class="dialog-close" value="cancel" aria-label="닫기">×</button>
+        <span class="dialog-kicker">사람에게 연결</span>
+        <h2>어떤 도움이 필요한가요?</h2>
+        <p>실제 서비스에서는 담당자·교사와 연결되는 단계입니다. 이 화면은 샘플 문장만 만듭니다.</p>
+        <label><input type="radio" name="helpType" value="내용이 이해되지 않아요" checked /> 내용이 이해되지 않아요</label>
+        <label><input type="radio" name="helpType" value="학습 계획을 다시 세우고 싶어요" /> 학습 계획을 다시 세우고 싶어요</label>
+        <label><input type="radio" name="helpType" value="화면이나 영상이 작동하지 않아요" /> 화면이나 영상이 작동하지 않아요</label>
+        <button class="dialog-submit" id="sendHelp" value="default" type="button">요청 문장 만들기</button>
+        <output id="helpOutput" aria-live="polite"></output>
+      </form>
+    </dialog>
+
+    <footer>
+      <span>강의 제안용 학생지원 MVP · KEDI의 현재 운영 서비스가 아님</span>
+      <span>개인정보·접근성·연구윤리 검토 후 별도 파일럿 필요</span>
+    </footer>
+    <script src="student.js" type="module"></script>
+  </body>
+</html>

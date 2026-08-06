@@ -87,6 +87,17 @@ references/bibtex/*
 !references/exports/.gitkeep
 !references/bibtex/.gitkeep
 
+# Local OS, preview, and lecture build artifacts
+.DS_Store
+tmp/
+.vercel/
+~$*
+*.pptx.inspect.ndjson
+workspace/lecture_20260807/build/
+workspace/lecture_20260807/KEDI_Codex_Research_AX_20260807/
+workspace/lecture_20260807/KEDI_Codex_Research_AX_20260807_ALL/
+workspace/lecture_20260807/KEDI_Codex_Research_AX_20260807_package.zip
+
 # IPython
 profile_default/
 ipython_config.py

@@ -1,0 +1,11 @@
+{
+  "name": "kedi-digital-learning-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.mjs",
+    "deploy:preview": "vercel --yes",
+    "deploy:prod": "vercel --prod --yes"
+  }
+}

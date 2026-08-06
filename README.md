@@ -60,6 +60,17 @@ research-agent/
 | 8. Review scoring | 논문 점수와 수정 backlog |
 | 9. Citation audit | claim별 사실/인용 검증 |
 
+## KEDI 디지털교육연구실 강의 자료
+
+2026년 8월 7일 강의용 `Codex 하네스 엔지니어링 기반 연구 환경 AX 자동화` 자료는
+[`workspace/lecture_20260807/`](workspace/lecture_20260807/)에 정리되어 있습니다.
+
+- 71장 PPTX와 배포용 PDF
+- 강의 진행안, 제작 가이드, 학생지원 MVP PRD
+- Research-agent 실습 노트북과 화면 캡처
+- 학생지원 서비스 프로토타입과 Vercel 배포 예시
+- PPT 재생성 소스와 전체 자료 ZIP
+
 ## PDF 저장
 
 참조 논문 PDF는 `references/pdfs/` 아래에 저장합니다.
