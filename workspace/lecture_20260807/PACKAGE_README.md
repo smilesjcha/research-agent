@@ -9,7 +9,7 @@
 - `STUDENT_SERVICE_MVP_PRD_KO.md` — 학생지원 MVP의 문제·비범위·핵심 기능·성과지표·90일 실험안
 - `prompt_cards.md` — 연구·서비스 요청문 카드
 - `exercise_worksheet.md` — 참가자용 서비스 발굴·위험 판정 워크시트
-- `prototype/` — 내 컴퓨터·AI 기능·Vercel 흐름을 보여주는 교육용 웹 시안
+- `prototype/` — 연구자용 시안, 학생지원 MVP, 문제·지표·검증을 연결한 독립형 `prd.html`
 - `notebooks/` — 실제 실습용 Research-agent Jupyter 노트북 4개
 - `requirements.txt` — 노트북 실행용 Python 의존성
 - `assets/notebook_screenshots/` — Research-agent 노트북 데모 백업 화면
@@ -23,11 +23,12 @@ cd /Users/sungjae-cha/Documents/research-agent/workspace/lecture_20260807/protot
 npm run dev
 ```
 
-1. <http://127.0.0.1:4173/student.html>에서 활동 완료·쉬운 설명·도움 요청을 눌러본다.
-2. <http://127.0.0.1:4173>에서 연구자용 서비스 시안도 확인한다.
-3. <https://prototype-rose-mu.vercel.app/student>가 열리는지 확인한다.
-4. Jupyter에서 기존 노트북 네 개가 열리는지 확인한다.
-5. 네트워크 장애 시 42·44·46·48·51·53번 장표와 `assets/` 캡처를 사용한다.
+1. <http://127.0.0.1:4173/prd.html>에서 문제·비범위·지표·검증 흐름을 확인한다.
+2. <http://127.0.0.1:4173/student.html>에서 활동 완료·쉬운 설명·도움 요청을 눌러본다.
+3. <http://127.0.0.1:4173>에서 연구자용 서비스 시안도 확인한다.
+4. <https://prototype-rose-mu.vercel.app/student>가 열리는지 확인한다.
+5. Jupyter에서 기존 노트북 네 개가 열리는지 확인한다.
+6. 네트워크 장애 시 42·44·46·48·51·53번 장표와 `assets/` 캡처를 사용한다.
 
 ## 데이터 보호 기준
 
