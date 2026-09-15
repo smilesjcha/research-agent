@@ -1,0 +1,22 @@
+{
+  "name": "source",
+  "version": "1.0.0",
+  "description": "- `node build.js [출력경로]` 로 `PNU_공학커뮤니케이션_20260915.pptx` 를 재생성합니다. (pptxgenjs, react-icons, sharp 필요) - `lib.js` — 디자인 시스템: 팔레트(네이비 0B1F3A · 코퍼 C97B2A), 헤더 자동 크기, 프리미엄 표(세로선 없음·얇은 가로선·세로 가운데 정렬·헤더 네이비), 카드·요청문 카드·아이콘 배지. - `build_part1.js` — 시작 · 01 채용 시장 · 02 직무 리서치 (1–17) - `build_part2.js` — 03 기술 문서 · 04 자기소개 (18–31) - `build_part3.js` — 05 Claude Desktop 실습 · 06 경계 · 마무리 (32–42)",
+  "main": "build.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "marked": "^18.0.13",
+    "pptxgenjs": "^4.0.1",
+    "qrcode": "^1.5.4",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-icons": "^5.7.0",
+    "sharp": "^0.35.4"
+  }
+}

@@ -43,7 +43,7 @@ research-agent/
 ├── prompts/research/          # 연구 프롬프트
 ├── skills/research/           # 연구 harness skill
 ├── references/                # PDF, 메타데이터, 논문 노트, evidence
-└── workspace/                 # 연구 질문, 문헌 지도, 아이디어, 초안, 평가
+└── workspace/                 # 연구 질문, 문헌 지도, 아이디어, 초안, 평가, 강의 자료(lecture_*)
 ```
 
 ## Workflow
@@ -60,9 +60,32 @@ research-agent/
 | 8. Review scoring | 논문 점수와 수정 backlog |
 | 9. Citation audit | claim별 사실/인용 검증 |
 
-## KEDI 디지털교육연구실 강의 자료
+## 부산대학교 공학커뮤니케이션 강의 자료 (2026-09-15)
 
-2026년 8월 7일 강의용 `Codex 하네스 엔지니어링 기반 연구 환경 AX 자동화` 자료는
+취업을 앞둔 공학도를 위한 **AI와 함께 쓰는 공학 커뮤니케이션** 강의 자료입니다.
+Claude Desktop의 **Code 탭(Claude Code)** 으로 내 폴더를 열어 직무 리서치 · 기술 문서 검토 · 모의 면접을 실습합니다.
+같은 폴더에서 같은 요청문을 매주 반복하는 것이 이 저장소가 말하는 하네스 엔지니어링입니다.
+
+| 무엇 | 어디 |
+|---|---|
+| 강의 장표 50장 (PPTX · PDF) | [`workspace/lecture_20260915/`](workspace/lecture_20260915/) |
+| 요청문 카드 A · B · C와 후속 요청 | [`prompt_cards.md`](workspace/lecture_20260915/prompt_cards.md) |
+| 실습 프로젝트 (삼성전자 DS · LG에너지솔루션 · 한화에어로스페이스 공고 요약 · 경험정리 · 보고서 · 자소서 · `CLAUDE.md`) | [`practice_kit/my-career/`](workspace/lecture_20260915/practice_kit/my-career/) |
+| 강사용 실습 시뮬레이션 가이드 | [`practice_guide.md`](workspace/lecture_20260915/practice_guide.md) |
+| 카드 A · B · C를 Claude Code로 실제 실행한 기록과 결과 | [`practice_runs/`](workspace/lecture_20260915/practice_runs/) |
+| PPT 재생성 소스와 세션 화면 렌더러 | [`source/`](workspace/lecture_20260915/source/) |
+
+실습 시작은 세 단계입니다.
+
+1. 이 저장소를 내려받는다. (Code → Download ZIP 또는 `git clone`)
+2. Claude Desktop → **Code** 탭 → 폴더 열기 → `workspace/lecture_20260915/practice_kit/my-career`
+3. 새 세션에서 모델 **Claude Fable 5.1**, 노력 수준 **높음**을 고르고 카드 A를 붙여 넣는다.
+
+결과는 `04_outputs/`에 파일로 남습니다. AI 결과 파일보다 **내가 표시한 확인 완료 · 확인 필요**가 실습의 산출물입니다.
+
+## KEDI 디지털교육연구실 강의 자료 (2026-08-07)
+
+`Codex 하네스 엔지니어링 기반 연구 환경 AX 자동화` 자료는
 [`workspace/lecture_20260807/`](workspace/lecture_20260807/)에 정리되어 있습니다.
 
 - 71장 PPTX와 배포용 PDF
