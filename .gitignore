@@ -236,3 +236,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node (PPT build tooling)
+node_modules/
+# Office lock files
+~$*

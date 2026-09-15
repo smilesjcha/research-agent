@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="한국교육개발원 디지털교육연구실 강의를 위한 학생지원 서비스 MVP PRD"
+    />
+    <title>이번 주 학습 길잡이 | MVP PRD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="prd.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="연구지원 서비스 시안으로 이동">
+        <span class="brand-mark" aria-hidden="true">K</span>
+        <span class="brand-copy">
+          <strong>KEDI Digital Learning Lab</strong>
+          <small>학생지원 서비스 제안 문서</small>
+        </span>
+      </a>
+      <nav class="topnav" aria-label="관련 화면">
+        <a href="index.html">연구자 시안</a>
+        <a href="student.html">학생 화면</a>
+        <button type="button" onclick="window.print()">인쇄 · PDF</button>
+      </nav>
+    </header>
+
+    <div class="page-grid">
+      <aside class="side-panel" aria-label="문서 목차">
+        <div class="status-block">
+          <span class="status-dot" aria-hidden="true"></span>
+          <div>
+            <small>DOCUMENT STATUS</small>
+            <strong>강의 제안 · 검증 전 초안</strong>
+          </div>
+        </div>
+        <nav class="toc">
+          <a href="#overview"><span>01</span>한눈에 보기</a>
+          <a href="#problem"><span>02</span>문제와 가치</a>
+          <a href="#scope"><span>03</span>핵심 범위</a>
+          <a href="#flow"><span>04</span>사용자 흐름</a>
+          <a href="#metrics"><span>05</span>성과와 안전</a>
+          <a href="#validation"><span>06</span>검증 계획</a>
+          <a href="#roadmap"><span>07</span>90일 실행</a>
+          <a href="#operations"><span>08</span>운영 원칙</a>
+          <a href="#sources"><span>09</span>근거와 안내</a>
+        </nav>
+        <p class="side-note">
+          제품 요구사항 문서(PRD)는 기능 목록이 아니라, 문제와 근거·성과·비범위·실험을 연결하는 팀의 기준 문서입니다.
+        </p>
+      </aside>
+
+      <main class="document">
+        <section class="hero" id="overview">
+          <div class="hero-kicker">
+            <span>MVP PRODUCT REQUIREMENTS DOCUMENT</span>
+            <span>2026. 08. 07</span>
+          </div>
+          <h1>이번 주<br /><em>학습 길잡이</em></h1>
+          <p class="hero-statement">
+            온라인 학습자가 해야 할 일을 작은 행동으로 나누고, 막힐 때 사람에게 도움을 요청하며, 학습을 한 문장으로 돌아보게 하는 학생지원 화면
+          </p>
+          <div class="hero-meta">
+            <dl>
+              <div><dt>1차 사용자</dt><dd>온라인 학습 과정 참여 학생</dd></div>
+              <div><dt>검증 범위</dt><dd>가상 자료 기반 로컬 MVP</dd></div>
+              <div><dt>중심 지표</dt><dd>주간 계획–실행–회고 완주율</dd></div>
+              <div><dt>판단 주체</dt><dd>학생·교사·연구자</dd></div>
+            </dl>
+          </div>
+          <div class="notice">
+            <strong>제안의 성격</strong>
+            <p>한국교육개발원의 현재 운영 서비스가 아닌 강의용 프로토타입. 공개 사업 맥락을 바탕으로 함께 검토할 서비스 가설.</p>
+          </div>
+        </section>
+
+        <section class="section" id="problem">
+          <div class="section-label"><span>02</span>PROBLEM &amp; VALUE</div>
+          <h2>흩어진 안내에서<br />분명한 다음 행동으로</h2>
+
+          <div class="problem-grid">
+            <article class="problem-card dark">
+              <span class="card-label">현재의 어려움</span>
+              <p>해야 할 일, 진도, 질문 경로가 여러 화면과 안내에 흩어진 온라인 학습 환경</p>
+              <ul>
+                <li>무엇부터 시작할지 판단하는 부담</li>
+                <li>막힌 지점을 설명하고 질문하는 부담</li>
+                <li>완료 경험과 다음 계획의 단절</li>
+              </ul>
+            </article>
+            <article class="problem-card blue">
+              <span class="card-label">가치 가설</span>
+              <p>작은 행동과 사람 도움 요청을 한 화면에 연결할 때 높아지는 학습 순환의 완주 가능성</p>
+              <div class="hypothesis">
+                <span>계획</span><i>→</i><span>실행</span><i>→</i><span>도움</span><i>→</i><span>회고</span>
+              </div>
+            </article>
+          </div>
+
+          <div class="jobs">
+            <article>
+              <span>주요 사용자</span>
+              <h3>온라인 학습 과정 참여 학생</h3>
+              <blockquote>“지금 할 수 있는 다음 행동을 알고, 막히면 부담 없이 사람에게 도움을 요청하고 싶다.”</blockquote>
+            </article>
+            <article>
+              <span>보조 사용자</span>
+              <h3>학습지원 담당자 · 교사 · 사업 운영자</h3>
+              <blockquote>“학생의 질문을 맥락과 함께 받고, 지원이 해결되었는지 확인하고 싶다.”</blockquote>
+            </article>
+          </div>
+          <p class="verification-note"><b>검증 필요</b> 문제의 빈도·심각도·대상별 차이는 실제 학생 인터뷰와 이용 행태 자료로 확인.</p>
+        </section>
+
+        <section class="section" id="scope">
+          <div class="section-label"><span>03</span>MVP SCOPE</div>
+          <h2>가설 검증에 필요한<br />최소 범위</h2>
+
+          <div class="scope-grid">
+            <article class="scope-card must">
+              <div class="scope-head"><span>MUST HAVE</span><strong>반드시 필요한 것</strong></div>
+              <ol>
+                <li><b>01</b><span>이번 주 목표 한 가지 선택</span></li>
+                <li><b>02</b><span>학습 활동을 5~20분 단위로 제시</span></li>
+                <li><b>03</b><span>규칙 기반 ‘다음 한 걸음’ 안내</span></li>
+                <li><b>04</b><span>시작 자신감에 따른 활동 크기 조정</span></li>
+                <li><b>05</b><span>사람이 받는 도움 요청 문장 만들기</span></li>
+                <li><b>06</b><span>한 문장 회고와 주간 진행 표시</span></li>
+                <li><b>07</b><span>자동 평가·자동 조치 없음 안내</span></li>
+              </ol>
+            </article>
+            <article class="scope-card not">
+              <div class="scope-head"><span>NOT IN MVP</span><strong>이번에는 하지 않는 것</strong></div>
+              <ul>
+                <li>자동 채점·등급·순위·성취 판단</li>
+                <li>‘위험 학생’ 예측·낙인·불이익 조치</li>
+                <li>건강·심리 상태 진단이나 상담</li>
+                <li>공개형 생성 AI에 실제 학생 정보 전송</li>
+                <li>사람 확인 없는 알림·지원 배정·기록 반영</li>
+                <li>서로 다른 사업의 동일 규칙 통합</li>
+              </ul>
+              <div class="boundary-message">기능의 수보다<br /><strong>자동화하지 않을 판단의 명시</strong></div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="flow">
+          <div class="section-label"><span>04</span>USER FLOW</div>
+          <h2>학생이 경험하는<br />여덟 개의 작은 단계</h2>
+
+          <ol class="flow-list">
+            <li><b>01</b><div><span>목표</span><strong>이번 주 목표 선택</strong></div></li>
+            <li><b>02</b><div><span>분해</span><strong>오늘 할 일 확인</strong></div></li>
+            <li><b>03</b><div><span>상태</span><strong>시작 자신감 표시</strong></div></li>
+            <li><b>04</b><div><span>행동</span><strong>다음 한 걸음 실행</strong></div></li>
+            <li class="human"><b>05</b><div><span>연결</span><strong>사람에게 도움 요청</strong></div></li>
+            <li><b>06</b><div><span>확인</span><strong>해결 여부 확인</strong></div></li>
+            <li><b>07</b><div><span>회고</span><strong>한 문장 기록</strong></div></li>
+            <li><b>08</b><div><span>조정</span><strong>다음 주 계획 조정</strong></div></li>
+          </ol>
+          <div class="principle-banner">
+            <span>설계의 중심</span>
+            <p>추천 정확도보다 <strong>다음 행동의 이해</strong>와 <strong>필요한 순간의 사람 연결</strong></p>
+          </div>
+        </section>
+
+        <section class="section" id="metrics">
+          <div class="section-label"><span>05</span>SUCCESS &amp; SAFETY</div>
+          <h2>성과와 안전을<br />같은 표에서 확인</h2>
+
+          <div class="north-star">
+            <span>NORTH STAR</span>
+            <div>
+              <h3>주간 계획–실행–회고 완주율</h3>
+              <p>목표 선택, 활동 1개 이상 완료, 한 문장 회고를 7일 안에 모두 수행한 참여자 비율</p>
+            </div>
+            <strong>사용 지표<br /><small>성적·능력 지표 아님</small></strong>
+          </div>
+
+          <div class="metric-grid">
+            <article>
+              <span>결과</span>
+              <h3>학생이 얻은 변화</h3>
+              <ul>
+                <li>핵심 활동 완료율 변화</li>
+                <li>다음 할 일의 명확성</li>
+                <li>도움 요청 해결률·시간</li>
+                <li>학생·교사의 지속 사용 의향</li>
+              </ul>
+            </article>
+            <article>
+              <span>선행</span>
+              <h3>변화가 시작되는 신호</h3>
+              <ul>
+                <li>첫 목표 설정률</li>
+                <li>7일 내 재방문율</li>
+                <li>다음 행동 안내 확인률</li>
+                <li>도움 요청 작성·취소율</li>
+              </ul>
+            </article>
+            <article>
+              <span>품질</span>
+              <h3>사용 경험의 수준</h3>
+              <ul>
+                <li>추천 문장 이해 비율</li>
+                <li>질문 맥락의 충분성</li>
+                <li>중대 접근성 문제 수</li>
+                <li>잘못된 다음 행동 제시율</li>
+              </ul>
+            </article>
+            <article class="safety">
+              <span>안전</span>
+              <h3>파일럿 진입 조건</h3>
+              <ul>
+                <li>자동 평가·불이익 조치 0건</li>
+                <li>실제 식별·민감정보 입력 0건</li>
+                <li>사람 연결 경로 노출 100%</li>
+                <li>중대한 접근성 오류 0건</li>
+              </ul>
+            </article>
+          </div>
+          <p class="caption">수치 기준은 확정 성과가 아닌, 파일럿 전에 팀이 합의할 의사결정 기준 초안.</p>
+        </section>
+
+        <section class="section" id="validation">
+          <div class="section-label"><span>06</span>VALIDATION PLAN</div>
+          <h2>작게 확인한 뒤<br />다음 단계 결정</h2>
+
+          <div class="validation-list">
+            <article>
+              <div class="phase"><b>0</b><span>내부 검토</span></div>
+              <div><h3>가상 자료 · 연구·운영 담당자 5명 내외</h3><p>목표 선택부터 회고까지 실행하며 혼란, 오류, 위험 문구 표시</p></div>
+              <strong>중대 접근성 문제 0건<br />자동 판단 없음</strong>
+            </article>
+            <article>
+              <div class="phase"><b>1</b><span>문제 확인</span></div>
+              <div><h3>승인·동의 절차를 거친 학생과 교사</h3><p>문제 빈도, 심각도, 기존 대안, 대상별 차이 확인</p></div>
+              <strong>문제가 드물거나<br />기존 기능으로 충분하면 중단</strong>
+            </article>
+            <article>
+              <div class="phase"><b>2</b><span>사용성</span></div>
+              <div><h3>10~15명 · 2~4주 탐색적 시험</h3><p>기존 흐름과 MVP 흐름의 시간, 오류, 완주 경험 비교</p></div>
+              <strong>효과 확정이 아닌<br />다음 실험 가치 판단</strong>
+            </article>
+            <article>
+              <div class="phase"><b>3</b><span>효과 연구</span></div>
+              <div><h3>연구설계·윤리·동의 절차 사전 확정</h3><p>검증된 측정도구와 원문 근거, 대상별 접근성·형평성 검토</p></div>
+              <strong>사업별 특성을<br />하나로 합치지 않음</strong>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="roadmap">
+          <div class="section-label"><span>07</span>90-DAY ROADMAP</div>
+          <h2>문제 정의에서<br />제한된 파일럿까지</h2>
+
+          <div class="roadmap">
+            <article>
+              <div class="days">DAY <b>01–30</b></div>
+              <h3>문제와 기준</h3>
+              <ul>
+                <li>공개 업무·기존 화면·문의 유형 검토</li>
+                <li>연구자·교사·학생 인터뷰 계획과 승인</li>
+                <li>문제·비범위·지표 사전 합의</li>
+                <li>가상 자료 기반 로컬 MVP</li>
+              </ul>
+              <span class="decision">결정 1 · 문제 확인</span>
+            </article>
+            <article>
+              <div class="days">DAY <b>31–60</b></div>
+              <h3>사용성과 안전</h3>
+              <ul>
+                <li>내부 5명 과업 시험</li>
+                <li>접근성·문구·도움 경로 수정</li>
+                <li>데이터 최소화·권한·로그 검토</li>
+                <li>학생 파일럿 진행 여부 판단</li>
+              </ul>
+              <span class="decision">결정 2 · 파일럿 진입</span>
+            </article>
+            <article>
+              <div class="days">DAY <b>61–90</b></div>
+              <h3>제한된 파일럿</h3>
+              <ul>
+                <li>승인 대상 2~4주 사용성 실험</li>
+                <li>결과·품질·안전 지표 확인</li>
+                <li>확대·재설계·축소·중단 결정</li>
+                <li>PRD·결정·다음 실험 갱신</li>
+              </ul>
+              <span class="decision">결정 3 · 다음 투자</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="operations">
+          <div class="section-label"><span>08</span>OPERATING MODEL</div>
+          <h2>AI보다 먼저 정리할<br />제품·연구 운영 방식</h2>
+
+          <div class="operating-principle">
+            <article><span>HUMANS STEER</span><h3>인간의 방향</h3><p>문제 정의, 목표, 가드레일, 최종 책임</p></article>
+            <article><span>AGENTS EXECUTE</span><h3>에이전트의 실행</h3><p>자료 정리, 초안, 반복 작업, 도구 연결</p></article>
+            <article><span>EVIDENCE DECIDES</span><h3>증거 기반 결정</h3><p>로그, 실험 결과, 평가 지표에 따른 개선</p></article>
+          </div>
+
+          <ol class="decision-loop" aria-label="제품과 연구 운영 순서">
+            <li><span>01</span><strong>문제 정의</strong><small>누구의 어떤 어려움인가</small></li>
+            <li><span>02</span><strong>근거 상태</strong><small>무엇을 확인했는가</small></li>
+            <li><span>03</span><strong>결과 가설</strong><small>어떤 변화가 가치인가</small></li>
+            <li><span>04</span><strong>성공·안전 지표</strong><small>어떻게 측정할 것인가</small></li>
+            <li><span>05</span><strong>비범위</strong><small>무엇을 하지 않을 것인가</small></li>
+            <li><span>06</span><strong>핵심 기능</strong><small>무엇이 꼭 필요한가</small></li>
+            <li><span>07</span><strong>작은 실험</strong><small>누구에게 시험할 것인가</small></li>
+            <li><span>08</span><strong>다음 결정</strong><small>확대·수정·중단</small></li>
+          </ol>
+
+          <div class="long-term">
+            <span>LONG-TERM DIRECTION</span>
+            <h3>‘AI 기능이 많은 서비스’보다<br />학생이 이해하고 선택하며 사람에게 연결되는 환경</h3>
+            <p>AI는 승인된 자료 안에서 쉬운 설명, 질문 문장, 회고 초안을 보조할 수 있다. 학생 평가와 지원 자격의 결정은 사람의 책임으로 유지한다.</p>
+          </div>
+        </section>
+
+        <section class="section sources" id="sources">
+          <div class="section-label"><span>09</span>SOURCES &amp; NOTES</div>
+          <h2>공개 맥락과<br />제안의 경계</h2>
+          <p class="source-intro">
+            공개 자료에서 확인되는 온라인 보충과정, 학생선수 e-School, 스쿨포유·하트포유 등 온라인 학습지원 맥락을 참고했다. 대화형 학습 코치가 현재 개발·운영 중이라는 의미는 아니다.
+          </p>
+          <ol class="source-list">
+            <li><a href="https://www.kedi.re.kr/khome/main/intro/listStaffForm.do" target="_blank" rel="noreferrer">KEDI 직원검색: 디지털교육연구실·온라인학습지원센터 업무</a></li>
+            <li><a href="https://www.kedi.re.kr/khome/main/announce/selectNoticeAnnounceForm.do?article_sq_no=36334&amp;board_sq_no=1&amp;selectTp=0" target="_blank" rel="noreferrer">2026년 스쿨포유 초등과정 콘텐츠 강의교사 모집</a></li>
+            <li><a href="https://www.kedi.re.kr/khome/main/announce/selectNoticeAnnounceForm.do?article_sq_no=36342&amp;board_sq_no=1&amp;selectTp=0" target="_blank" rel="noreferrer">2026년 하트포유 사회정서교육 콘텐츠 강의교사 모집</a></li>
+            <li><a href="https://www.kedi.re.kr/khome/main/announce/selectNoticeAnnounceForm.do?article_sq_no=36333&amp;board_sq_no=1&amp;selectTp=0" target="_blank" rel="noreferrer">2026년 온라인 보충과정 콘텐츠 개발</a></li>
+            <li><a href="https://www.kedi.re.kr/khome/main/announce/selectBroadAnnounceForm.do?article_sq_no=35834&amp;board_sq_no=3&amp;selectTp=0" target="_blank" rel="noreferrer">학생선수 e-School의 목적과 운영 맥락</a></li>
+            <li><a href="https://www.kedi.re.kr/khome/main/announce/selectBroadAnnounceForm.do?article_sq_no=36409&amp;board_sq_no=3&amp;selectTp=0" target="_blank" rel="noreferrer">2026 KEDI Brief: 초·중등 교실에서 AI 활용의 어려움</a></li>
+          </ol>
+          <div class="final-note">
+            <strong>실제 적용 전 필수 검토</strong>
+            <span>기관 보안 · 개인정보 · 연구윤리 · 접근성 · 기록 보존 · 사용자 동의</span>
+          </div>
+        </section>
+
+        <footer class="document-footer">
+          <span>KEDI Digital Learning Lab · Lecture Prototype</span>
+          <span>Research AX with Codex</span>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
